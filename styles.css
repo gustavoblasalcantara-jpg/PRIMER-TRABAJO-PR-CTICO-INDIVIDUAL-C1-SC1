@@ -1,5 +1,5 @@
 /* =========================================================
-   Banco Perú Solidario — CSS3 Gustavo Blas Alcantara
+   Banco Perú Solidario BLAS ALCANTARA GUSS
    ========================================================= */
 
 :root {
@@ -70,6 +70,25 @@ a {
   white-space: nowrap;
 }
 
+/* ---------- Íconos SVG institucionales ----------. */
+
+.sprite-iconos {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.marca-sello,
+.hero-emblema,
+.tramite-icono {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 /* ---------- Aviso superior ---------- */
 
 .aviso-bar {
@@ -101,17 +120,9 @@ a {
 }
 
 .marca-sello {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  border: 2px solid var(--color-gold);
-  color: var(--color-ink);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.05rem;
-  border-radius: 50%;
+  width: 2.7rem;
+  height: 2.7rem;
+  color: var(--color-gold-dark);
   flex-shrink: 0;
 }
 
@@ -163,6 +174,13 @@ a {
   grid-template-columns: 1.3fr 1fr;
   gap: var(--space-4);
   align-items: start;
+}
+
+.hero-emblema {
+  width: 3.4rem;
+  height: 3.4rem;
+  color: var(--color-gold-dark);
+  margin-bottom: var(--space-2);
 }
 
 .hero-antetitulo {
@@ -246,7 +264,7 @@ a {
   font-weight: 700;
 }
 
-/* ---------- Servicios y trámites ---------- */
+/* ---------- Servicios / trámites ---------- */
 
 .servicios, .programas, .agencias, .reclamos {
   max-width: var(--ancho-maximo);
@@ -278,9 +296,16 @@ a {
   background: var(--color-parchment);
 }
 
+.tramite-icono {
+  width: 1.7rem;
+  height: 1.7rem;
+  color: var(--color-teal);
+  flex-shrink: 0;
+}
+
 .tramite-codigo {
   flex-shrink: 0;
-  width: 4.2rem;
+  width: 3.6rem;
   font-weight: 700;
   color: var(--color-gold-dark);
 }
@@ -295,7 +320,7 @@ a {
   font-size: 0.95rem;
 }
 
-/* ---------- Tabla de programas sociales ----------   */
+/* ---------- Tabla de programas sociales ---------- */
 
 .tabla-envoltorio {
   overflow-x: auto;
