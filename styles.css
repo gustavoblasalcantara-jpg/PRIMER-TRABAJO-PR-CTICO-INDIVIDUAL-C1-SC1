@@ -1,0 +1,534 @@
+/* =========================================================
+   Banco Perú Solidario — CSS3 nativo (sin frameworks)
+   ========================================================= */
+
+:root {
+  --color-ink: #10233d;
+  --color-ink-soft: #1b3a5c;
+  --color-parchment: #f1ead9;
+  --color-paper: #faf7f0;
+  --color-gold: #b8842f;
+  --color-gold-dark: #8a6019;
+  --color-teal: #2f6e5d;
+  --color-rust: #9a3b2b;
+  --color-text: #182530;
+  --color-text-soft: #4b5a68;
+  --color-line: rgba(16, 35, 61, 0.16);
+
+  --font-display: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  --font-body: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  --radio-sm: 3px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 3rem;
+  --space-5: 5rem;
+
+  --ancho-maximo: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-paper);
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  line-height: 1.2;
+  margin: 0 0 var(--space-2) 0;
+}
+
+h1 { font-size: clamp(2rem, 4vw, 2.9rem); }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.12rem; }
+
+p { margin: 0 0 var(--space-2) 0; }
+
+a {
+  color: var(--color-ink-soft);
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Aviso superior ---------- */
+
+.aviso-bar {
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-parchment);
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 0.5rem var(--space-2);
+}
+
+/* ---------- Encabezado ---------- */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-2);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.marca-sello {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--color-gold);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.marca-texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.marca-nombre {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-ink);
+}
+
+.marca-lema {
+  font-size: 0.82rem;
+  color: var(--color-text-soft);
+}
+
+.nav-principal ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-principal a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+.nav-principal a:hover {
+  border-bottom-color: var(--color-gold);
+  color: var(--color-ink);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-2);
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.hero-antetitulo {
+  color: var(--color-gold-dark);
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.hero-parrafo {
+  max-width: 60ch;
+  color: var(--color-text-soft);
+  font-size: 1.05rem;
+}
+
+.hero-acciones {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: var(--space-3);
+}
+
+.boton {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radio-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.boton-primario {
+  background: var(--color-ink);
+  color: var(--color-parchment);
+}
+
+.boton-primario:hover {
+  background: var(--color-ink-soft);
+}
+
+.boton-secundario {
+  background: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+.boton-secundario:hover {
+  background: var(--color-ink);
+  color: var(--color-parchment);
+}
+
+.hero-ficha {
+  background: var(--color-parchment);
+  border-left: 5px solid var(--color-gold);
+  padding: var(--space-3);
+}
+
+.hero-ficha dl {
+  margin: 0;
+}
+
+.hero-ficha-dato {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.hero-ficha-dato:last-child {
+  border-bottom: none;
+}
+
+.hero-ficha-dato dt {
+  font-size: 0.82rem;
+  color: var(--color-text-soft);
+}
+
+.hero-ficha-dato dd {
+  margin: 0.15rem 0 0 0;
+  font-size: 1.3rem;
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+/* ---------- Servicios / trámites ---------- */
+
+.servicios, .programas, .agencias, .reclamos {
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-2);
+  border-top: 1px solid var(--color-line);
+}
+
+.seccion-intro {
+  color: var(--color-text-soft);
+  max-width: 70ch;
+}
+
+.lista-tramites {
+  list-style: none;
+  margin: var(--space-3) 0 0 0;
+  padding: 0;
+}
+
+.tramite {
+  display: flex;
+  gap: var(--space-3);
+  align-items: baseline;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.tramite:hover {
+  background: var(--color-parchment);
+}
+
+.tramite-codigo {
+  flex-shrink: 0;
+  width: 4.2rem;
+  font-weight: 700;
+  color: var(--color-gold-dark);
+}
+
+.tramite-cuerpo h3 {
+  margin: 0 0 0.2rem 0;
+}
+
+.tramite-cuerpo p {
+  margin: 0;
+  color: var(--color-text-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------- Tabla de programas sociales ---------- */
+
+.tabla-envoltorio {
+  overflow-x: auto;
+  margin-top: var(--space-3);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+caption {
+  text-align: left;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--color-line);
+  font-size: 0.95rem;
+}
+
+thead th {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-ink);
+}
+
+tbody tr:hover {
+  background: var(--color-parchment);
+}
+
+td[data-estado="vigente"] {
+  color: var(--color-teal);
+  font-weight: 600;
+}
+
+td[data-estado="proximo"] {
+  color: var(--color-gold-dark);
+  font-weight: 600;
+}
+
+td[data-estado="suspendido"] {
+  color: var(--color-rust);
+  font-weight: 600;
+}
+
+/* ---------- Red de agencias ---------- */
+
+.lista-regiones {
+  list-style: none;
+  margin: var(--space-3) 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+}
+
+.lista-regiones li {
+  border-left: 3px solid var(--color-teal);
+  padding: 0.4rem 0 0.4rem var(--space-2);
+}
+
+.lista-regiones h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.lista-regiones p {
+  margin: 0.2rem 0 0 0;
+  color: var(--color-text-soft);
+}
+
+.agencias-nota {
+  color: var(--color-text-soft);
+  max-width: 70ch;
+}
+
+/* ---------- Formulario de reclamos ---------- */
+
+.formulario-reclamo {
+  margin-top: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+fieldset {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radio-sm);
+  padding: var(--space-3);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-2) var(--space-3);
+}
+
+legend {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  padding: 0 0.5rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo-ancho {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 0.9rem;
+  color: var(--color-text-soft);
+}
+
+input, select, textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radio-sm);
+  background: var(--color-paper);
+  color: var(--color-text);
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:hover, select:hover, textarea:hover {
+  border-color: var(--color-ink-soft);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 1px;
+}
+
+input[required], select[required], textarea[required] {
+  border-left: 3px solid var(--color-gold);
+}
+
+input:invalid:not(:placeholder-shown) {
+  border-color: var(--color-rust);
+}
+
+input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  padding: 0;
+}
+
+.campo-declaracion {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.campo-declaracion label {
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.formulario-reclamo .boton {
+  align-self: flex-start;
+}
+
+/* ---------- Pie de página ---------- */
+
+.site-footer {
+  background: var(--color-ink);
+  color: var(--color-parchment);
+  padding: var(--space-4) var(--space-2);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+}
+
+.site-footer h2 {
+  color: var(--color-parchment);
+  font-size: 1.05rem;
+}
+
+.footer-enlaces {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-enlaces a {
+  color: var(--color-parchment);
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+.footer-enlaces a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-legal {
+  grid-column: 1 / -1;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  border-top: 1px solid rgba(241, 234, 217, 0.25);
+  padding-top: var(--space-2);
+  margin: 0;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 780px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

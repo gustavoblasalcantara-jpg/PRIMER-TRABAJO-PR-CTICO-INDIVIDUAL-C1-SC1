@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banco Perú Solidario — Pago de sueldos y programas sociales</title>
+<meta name="description" content="Banco Perú Solidario: banca estatal a cargo del pago de sueldos públicos y el desembolso de programas sociales a nivel nacional.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<p class="aviso-bar">
+  Horario de atención en agencias: lunes a viernes 8:00–18:00, sábados 8:00–13:00. Central telefónica 0800-1-1010, las 24 horas.
+</p>
+
+<header class="site-header">
+  <div class="marca">
+    <span class="marca-sello" aria-hidden="true">BPS</span>
+    <div class="marca-texto">
+      <span class="marca-nombre">Banco Perú Solidario</span>
+      <span class="marca-lema">Banca del Estado peruano</span>
+    </div>
+  </div>
+  <nav class="nav-principal" aria-label="Navegación principal">
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#programas">Programas sociales</a></li>
+      <li><a href="#agencias">Red de agencias</a></li>
+      <li><a href="#reclamos">Reclamos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero" aria-labelledby="hero-titulo">
+    <div class="hero-texto">
+      <p class="hero-antetitulo">Entidad de banca estatal</p>
+      <h1 id="hero-titulo">Sostenemos el pago del Perú que trabaja</h1>
+      <p class="hero-parrafo">
+        Procesamos la planilla de las entidades del Estado y entregamos los programas sociales
+        del Gobierno a través de la red de agencias con mayor alcance del país. Todos los meses,
+        millones de servidores públicos y beneficiarios reciben su pago a través de BPS.
+      </p>
+      <div class="hero-acciones">
+        <a class="boton boton-primario" href="#reclamos">Registrar un reclamo</a>
+        <a class="boton boton-secundario" href="#agencias">Ubicar mi agencia</a>
+      </div>
+    </div>
+    <aside class="hero-ficha" aria-label="Cifras de operación de BPS">
+      <dl>
+        <div class="hero-ficha-dato">
+          <dt>Agencias a nivel nacional</dt>
+          <dd>1,850</dd>
+        </div>
+        <div class="hero-ficha-dato">
+          <dt>Servidores públicos con haber pagado por BPS</dt>
+          <dd>642,300</dd>
+        </div>
+        <div class="hero-ficha-dato">
+          <dt>Monto mensual desembolsado en sueldos</dt>
+          <dd>S/ 4,820 millones</dd>
+        </div>
+        <div class="hero-ficha-dato">
+          <dt>Beneficiarios de programas sociales atendidos</dt>
+          <dd>1,140,000</dd>
+        </div>
+      </dl>
+    </aside>
+  </section>
+
+  <section id="servicios" class="servicios" aria-labelledby="servicios-titulo">
+    <h2 id="servicios-titulo">Trámites disponibles</h2>
+    <p class="seccion-intro">
+      Cada trámite tiene un código de procedimiento (TUPA) asignado por la entidad, visible en la
+      constancia que se entrega al finalizar la atención.
+    </p>
+    <ul class="lista-tramites">
+      <li class="tramite" data-codigo="T-101">
+        <span class="tramite-codigo">T-101</span>
+        <div class="tramite-cuerpo">
+          <h3>Pago de sueldos del sector público</h3>
+          <p>Acreditación y cobro de haberes de planillas de entidades estatales adscritas a BPS.</p>
+        </div>
+      </li>
+      <li class="tramite" data-codigo="T-114">
+        <span class="tramite-codigo">T-114</span>
+        <div class="tramite-cuerpo">
+          <h3>Desembolso de programas sociales</h3>
+          <p>Cobro de bonos y subsidios del Estado en ventanilla o cajero, sin costo de mantenimiento.</p>
+        </div>
+      </li>
+      <li class="tramite" data-codigo="T-208">
+        <span class="tramite-codigo">T-208</span>
+        <div class="tramite-cuerpo">
+          <h3>Cita en agencia</h3>
+          <p>Reserva de horario de atención preferente para trámites de alto volumen documentario.</p>
+        </div>
+      </li>
+      <li class="tramite" data-codigo="T-330">
+        <span class="tramite-codigo">T-330</span>
+        <div class="tramite-cuerpo">
+          <h3>Reclamos y seguimiento</h3>
+          <p>Registro de incidencias sobre pagos no acreditados, cobros indebidos o atención en agencia.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="programas" class="programas" aria-labelledby="programas-titulo">
+    <h2 id="programas-titulo">Programas sociales que se cobran en BPS</h2>
+    <p class="seccion-intro">
+      Los montos y la periodicidad los define la entidad del Estado responsable de cada programa;
+      BPS únicamente administra el pago en agencia.
+    </p>
+    <div class="tabla-envoltorio">
+      <table>
+        <caption class="visualmente-oculto">Programas sociales, monto mensual y estado del pago</caption>
+        <thead>
+          <tr>
+            <th scope="col">Programa</th>
+            <th scope="col">Beneficiario</th>
+            <th scope="col">Monto</th>
+            <th scope="col">Frecuencia</th>
+            <th scope="col">Estado del ciclo actual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Apoyo Directo al Hogar</th>
+            <td>Familias en pobreza extrema con hijos en edad escolar</td>
+            <td>S/ 200</td>
+            <td>Bimestral</td>
+            <td data-estado="vigente">Vigente</td>
+          </tr>
+          <tr>
+            <th scope="row">Bono Vejez Digna</th>
+            <td>Adultos mayores de 65 años sin pensión</td>
+            <td>S/ 250</td>
+            <td>Mensual</td>
+            <td data-estado="vigente">Vigente</td>
+          </tr>
+          <tr>
+            <th scope="row">Sueldo Joven Rural</th>
+            <td>Jóvenes agricultores de zonas altoandinas</td>
+            <td>S/ 180</td>
+            <td>Trimestral</td>
+            <td data-estado="proximo">Próximo ciclo</td>
+          </tr>
+          <tr>
+            <th scope="row">Cuna y Nutrición</th>
+            <td>Gestantes y niños menores de 3 años</td>
+            <td>S/ 150</td>
+            <td>Mensual</td>
+            <td data-estado="suspendido">Suspendido</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="agencias" class="agencias" aria-labelledby="agencias-titulo">
+    <h2 id="agencias-titulo">Red de agencias por región</h2>
+    <ul class="lista-regiones">
+      <li>
+        <h3>Lima Metropolitana</h3>
+        <p>412 agencias</p>
+      </li>
+      <li>
+        <h3>Costa norte y sur</h3>
+        <p>486 agencias</p>
+      </li>
+      <li>
+        <h3>Sierra</h3>
+        <p>661 agencias</p>
+      </li>
+      <li>
+        <h3>Selva</h3>
+        <p>291 agencias</p>
+      </li>
+    </ul>
+    <p class="agencias-nota">
+      La agencia con mayor tráfico transaccional del país es la sede de Jr. Lampa, en el Cercado de
+      Lima, con un promedio de 3,400 atenciones diarias durante la semana de pago de sueldos.
+    </p>
+  </section>
+
+  <section id="reclamos" class="reclamos" aria-labelledby="reclamos-titulo">
+    <h2 id="reclamos-titulo">Registrar un reclamo</h2>
+    <p class="seccion-intro">
+      Trámite T-330. Complete el formulario si su sueldo o su programa social no fue acreditado, si
+      se realizó un cobro indebido o si tuvo un inconveniente en la atención de agencia.
+    </p>
+
+    <form class="formulario-reclamo" action="#" method="post">
+
+      <fieldset>
+        <legend>Datos del reclamante</legend>
+
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required minlength="4" autocomplete="name">
+        </div>
+
+        <div class="campo">
+          <label for="dni">DNI</label>
+          <input type="text" id="dni" name="dni" required pattern="[0-9]{8}" maxlength="8"
+                 placeholder="8 dígitos" inputmode="numeric" title="Ingrese los 8 dígitos de su DNI">
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Teléfono de contacto</label>
+          <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{9}"
+                 placeholder="9 dígitos" inputmode="numeric" title="Ingrese un número de 9 dígitos">
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" required autocomplete="email">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Datos del trámite</legend>
+
+        <div class="campo">
+          <label for="tipo-tramite">Tipo de trámite afectado</label>
+          <select id="tipo-tramite" name="tipo-tramite" required>
+            <option value="">Seleccione una opción</option>
+            <option value="sueldo">Pago de sueldo público (T-101)</option>
+            <option value="programa">Programa social (T-114)</option>
+            <option value="cita">Cita en agencia (T-208)</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="region">Región de la agencia</label>
+          <select id="region" name="region" required>
+            <option value="">Seleccione una opción</option>
+            <option value="lima">Lima Metropolitana</option>
+            <option value="costa">Costa norte y sur</option>
+            <option value="sierra">Sierra</option>
+            <option value="selva">Selva</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="operacion">N.º de operación (si figura en su constancia)</label>
+          <input type="text" id="operacion" name="operacion" pattern="[0-9]{6,12}"
+                 placeholder="Opcional" inputmode="numeric" title="Solo números, entre 6 y 12 dígitos">
+        </div>
+
+        <div class="campo">
+          <label for="fecha">Fecha en que ocurrió el problema</label>
+          <input type="date" id="fecha" name="fecha" required>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Descripción del reclamo</legend>
+
+        <div class="campo campo-ancho">
+          <label for="detalle">Detalle lo ocurrido</label>
+          <textarea id="detalle" name="detalle" rows="5" required minlength="20" maxlength="600"
+                    placeholder="Describa el problema con el mayor detalle posible: monto esperado, agencia, y qué le informó el personal."></textarea>
+        </div>
+
+        <div class="campo campo-ancho">
+          <label for="constancia">Adjuntar constancia o captura (PDF o imagen, opcional)</label>
+          <input type="file" id="constancia" name="constancia" accept=".pdf,.jpg,.jpeg,.png">
+        </div>
+      </fieldset>
+
+      <div class="campo campo-declaracion">
+        <input type="checkbox" id="declaracion" name="declaracion" required>
+        <label for="declaracion">Declaro que la información consignada es verdadera y podrá ser verificada por BPS.</label>
+      </div>
+
+      <button type="submit" class="boton boton-primario">Registrar reclamo</button>
+    </form>
+  </section>
+
+</main>
+
+<footer id="contacto" class="site-footer">
+  <div class="footer-columna">
+    <h2>Atención al público</h2>
+    <p>Central telefónica: 0800-1-1010 (gratuita, las 24 horas)</p>
+    <p>Sede central: Jr. Lampa 499, Cercado de Lima</p>
+    <p>Horario de agencias: lunes a viernes 8:00–18:00, sábados 8:00–13:00</p>
+  </div>
+  <div class="footer-columna">
+    <h2>Enlaces</h2>
+    <ul class="footer-enlaces">
+      <li><a href="#reclamos">Libro de reclamaciones</a></li>
+      <li><a href="#programas">Programas sociales vigentes</a></li>
+      <li><a href="#agencias">Ubicar agencia</a></li>
+    </ul>
+  </div>
+  <p class="footer-legal">
+    Banco Perú Solidario es una entidad ficticia creada con fines académicos. Cualquier semejanza con
+    entidades reales es referencial y no representa información oficial.
+  </p>
+</footer>
+
+</body>
+</html>
