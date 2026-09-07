@@ -1,5 +1,5 @@
 /* =========================================================
-   Banco Perú Solidario — CSS3 nativo (sin frameworks)
+   Banco Perú Solidario — CSS3 Gustavo Blas Alcantara
    ========================================================= */
 
 :root {
@@ -246,7 +246,7 @@ a {
   font-weight: 700;
 }
 
-/* ---------- Servicios / trámites ---------- */
+/* ---------- Servicios y trámites ---------- */
 
 .servicios, .programas, .agencias, .reclamos {
   max-width: var(--ancho-maximo);
@@ -295,7 +295,7 @@ a {
   font-size: 0.95rem;
 }
 
-/* ---------- Tabla de programas sociales ---------- */
+/* ---------- Tabla de programas sociales ----------   */
 
 .tabla-envoltorio {
   overflow-x: auto;
