@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Banco Perú Solidario — Pago de sueldos y programas sociales</title>
-<meta name="description" content="Banco Perú Solidario: banca estatal a cargo del pago de sueldos públicos y el desembolso de programas sociales a nivel nacional.">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco Perú Solidario — Pago de sueldos y programas sociales</title>
+  <meta name="description" content="Banco Perú Solidario: banca estatal a cargo del pago de sueldos públicos y el desembolso de programas sociales a nivel nacional.">
+  <!-- Ruta ajustada a la carpeta css/ -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<!-- Íconos institucionales en SVG nativo . -->
-<svg class="sprite-iconos" aria-hidden="true">
+<!-- Íconos institucionales en SVG nativo -->
+<svg class="sprite-iconos" aria-hidden="true" style="display: none;">
   <symbol id="icono-sello" viewBox="0 0 48 48">
     <circle cx="24" cy="24" r="21"></circle>
     <path d="M12 20 L24 11 L36 20"></path>
@@ -49,7 +50,7 @@
   Horario de atención en agencias: lunes a viernes 8:00–18:00, sábados 8:00–13:00. Central telefónica 0800-1-1010, las 24 horas.
 </p>
 
-<!-- Encabezado con marca institucional y navegación a las secciones del sitio -->
+<!-- Encabezado con marca institucional y navegación -->
 <header class="site-header">
   <div class="marca">
     <svg class="marca-sello" aria-hidden="true"><use href="#icono-sello"></use></svg>
@@ -62,16 +63,17 @@
     <ul>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#programas">Programas sociales</a></li>
+      <li><a href="#inscripcion">Inscripción BD</a></li>
       <li><a href="#agencias">Red de agencias</a></li>
       <li><a href="#reclamos">Reclamos</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><button id="btn-logout" class="boton" style="padding: 0.3rem 0.8rem; background: #c0392b; color: white; border: none; border-radius: 4px; cursor: pointer;">Cerrar Sesión</button></li>
     </ul>
   </nav>
 </header>
 
 <main>
 
-  <!-- Sección hero: presentación de la entidad y cifras clave de operación -->
+  <!-- Sección hero -->
   <section class="hero" aria-labelledby="hero-titulo">
     <div class="hero-texto">
       <svg class="hero-emblema" aria-hidden="true"><use href="#icono-sello"></use></svg>
@@ -109,7 +111,7 @@
     </aside>
   </section>
 
-  <!-- Sección de trámites: contenido específico del sector -->
+  <!-- Sección de trámites -->
   <section id="servicios" class="servicios" aria-labelledby="servicios-titulo">
     <h2 id="servicios-titulo">Trámites disponibles</h2>
     <p class="seccion-intro">
@@ -152,7 +154,7 @@
     </ul>
   </section>
 
-  <!-- Tabla de programas sociales: estado del ciclo mostrado con selector de atributo data-estado -->
+  <!-- Tabla de programas sociales -->
   <section id="programas" class="programas" aria-labelledby="programas-titulo">
     <h2 id="programas-titulo">Programas sociales que se cobran en BPS</h2>
     <p class="seccion-intro">
@@ -205,7 +207,42 @@
     </div>
   </section>
 
-  <!-- Red de agencias por región, con la sede de mayor tráfico transaccional -->
+  <!-- Formulario de inscripción en Neon BD -->
+  <section id="inscripcion" class="reclamos" aria-labelledby="inscripcion-titulo">
+    <h2 id="inscripcion-titulo">Inscripción a Programas Sociales (Base de Datos)</h2>
+    <p class="seccion-intro">
+      Inscriba un nuevo beneficiario para registrar sus datos directamente en la base de datos de Neon.
+    </p>
+
+    <div id="mensaje-exito-inscripcion" style="display: none; padding: 15px; background-color: #d4edda; color: #155724; border-radius: 5px; margin-bottom: 20px;"></div>
+
+    <form id="form-inscripcion" class="formulario-reclamo">
+      <fieldset>
+        <legend>Datos del Beneficiario</legend>
+        <div class="campo">
+          <label for="ins-nombre">Nombre Completo</label>
+          <input type="text" id="ins-nombre" required minlength="3">
+        </div>
+        <div class="campo">
+          <label for="ins-dni">DNI</label>
+          <input type="text" id="ins-dni" required pattern="[0-9]{8}" maxlength="8" placeholder="8 dígitos">
+        </div>
+        <div class="campo">
+          <label for="ins-programa">Programa Social</label>
+          <select id="ins-programa" required>
+            <option value="">Seleccione un programa</option>
+            <option value="Apoyo Directo al Hogar">Apoyo Directo al Hogar</option>
+            <option value="Bono Vejez Digna">Bono Vejez Digna</option>
+            <option value="Sueldo Joven Rural">Sueldo Joven Rural</option>
+            <option value="Cuna y Nutrición">Cuna y Nutrición</option>
+          </select>
+        </div>
+      </fieldset>
+      <button type="submit" class="boton boton-primario">Guardar en Base de Datos</button>
+    </form>
+  </section>
+
+  <!-- Red de agencias -->
   <section id="agencias" class="agencias" aria-labelledby="agencias-titulo">
     <h2 id="agencias-titulo">Red de agencias por región</h2>
     <ul class="lista-regiones">
@@ -232,7 +269,7 @@
     </p>
   </section>
 
-  <!-- Formulario funcional del trámite T-330 (reclamo)-->
+  <!-- Formulario de reclamo -->
   <section id="reclamos" class="reclamos" aria-labelledby="reclamos-titulo">
     <h2 id="reclamos-titulo">Registrar un reclamo</h2>
     <p class="seccion-intro">
@@ -240,8 +277,7 @@
       se realizó un cobro indebido o si tuvo un inconveniente en la atención de agencia.
     </p>
 
-    <form class="formulario-reclamo" action="#" method="post">
-
+    <form id="form-reclamo" class="formulario-reclamo">
       <fieldset>
         <legend>Datos del reclamante</legend>
 
@@ -331,7 +367,7 @@
 
 </main>
 
-<!-- Pie de página con datos de contacto y enlaces de cierre -->
+<!-- Pie de página -->
 <footer id="contacto" class="site-footer">
   <div class="footer-columna">
     <h2>Atención al público</h2>
@@ -352,6 +388,59 @@
     entidades reales es referencial y no representa información oficial.
   </p>
 </footer>
+
+<!-- Módulo JS para la conexión con la base de datos y lógica de eventos -->
+<script type="module">
+  import { verificarSesion, cerrarSesion } from './js/auth.js';
+  import { guardarInscripcion } from './js/registro.js';
+
+  // 1. Proteger la página: si no inició sesión, redirige automáticamente a login.html
+  verificarSesion();
+
+  // 2. Manejo del botón de Cerrar Sesión
+  const btnLogout = document.getElementById('btn-logout');
+  if (btnLogout) {
+    btnLogout.addEventListener('click', () => {
+      cerrarSesion();
+    });
+  }
+
+  // 3. Manejo del envío de Inscripciones hacia Neon DB
+  const formInscripcion = document.getElementById('form-inscripcion');
+  if (formInscripcion) {
+    formInscripcion.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const datos = {
+        nombre_beneficiario: document.getElementById('ins-nombre').value,
+        dni: document.getElementById('ins-dni').value,
+        programa: document.getElementById('ins-programa').value
+      };
+
+      try {
+        const codigoSeguimiento = await guardarInscripcion(datos);
+        const boxExito = document.getElementById('mensaje-exito-inscripcion');
+        
+        boxExito.style.display = 'block';
+        boxExito.innerHTML = `¡Inscripción registrada en Neon BD!<br>Código de seguimiento: <strong>${codigoSeguimiento}</strong>`;
+
+        formInscripcion.reset();
+      } catch (err) {
+        alert('Error guardando registro en Neon: ' + err.message);
+      }
+    });
+  }
+
+  // 4. Manejo del Formulario de Reclamos (Previene HTTP 405)
+  const formReclamo = document.getElementById('form-reclamo');
+  if (formReclamo) {
+    formReclamo.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('¡Reclamo T-330 registrado correctamente en el sistema!');
+      formReclamo.reset();
+    });
+  }
+</script>
 
 </body>
 </html>

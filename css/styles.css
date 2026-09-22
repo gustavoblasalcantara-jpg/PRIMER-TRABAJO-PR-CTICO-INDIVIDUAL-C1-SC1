@@ -70,7 +70,7 @@ a {
   white-space: nowrap;
 }
 
-/* ---------- Íconos SVG institucionales ----------. */
+/* ---------- Íconos SVG institucionales ---------- */
 
 .sprite-iconos {
   position: absolute;
@@ -79,6 +79,7 @@ a {
   overflow: hidden;
 }
 
+/* EFECTO CSS3: Íconos interactivos animados con transición */
 .marca-sello,
 .hero-emblema,
 .tramite-icono {
@@ -87,6 +88,11 @@ a {
   stroke-width: 1.6;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.marca-sello:hover, .hero-emblema:hover {
+  transform: rotate(12deg) scale(1.15);
 }
 
 /* ---------- Aviso superior ---------- */
@@ -100,9 +106,16 @@ a {
   padding: 0.5rem var(--space-2);
 }
 
-/* ---------- Encabezado ---------- */
+/* ---------- Encabezado (Con Degradado CSS3) ---------- */
 
 .site-header {
+  /* EFECTO CSS3: Degradado institucional en el encabezado */
+  background: linear-gradient(135deg, #0a182b 0%, var(--color-ink) 100%);
+  border-bottom: 3px solid var(--color-gold);
+  padding: var(--space-2);
+}
+
+.header-contenedor {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -110,7 +123,6 @@ a {
   gap: var(--space-2);
   max-width: var(--ancho-maximo);
   margin: 0 auto;
-  padding: var(--space-3) var(--space-2);
 }
 
 .marca {
@@ -122,7 +134,7 @@ a {
 .marca-sello {
   width: 2.7rem;
   height: 2.7rem;
-  color: var(--color-gold-dark);
+  color: var(--color-gold);
   flex-shrink: 0;
 }
 
@@ -134,14 +146,15 @@ a {
 .marca-nombre {
   font-family: var(--font-display);
   font-size: 1.25rem;
-  color: var(--color-ink);
+  color: var(--color-parchment);
 }
 
 .marca-lema {
   font-size: 0.82rem;
-  color: var(--color-text-soft);
+  color: rgba(241, 234, 217, 0.75);
 }
 
+/* TRANSICIÓN CSS3: Color en el menú de navegación */
 .nav-principal ul {
   list-style: none;
   display: flex;
@@ -154,14 +167,16 @@ a {
 .nav-principal a {
   text-decoration: none;
   font-size: 0.95rem;
-  color: var(--color-ink-soft);
+  color: var(--color-parchment);
   border-bottom: 2px solid transparent;
   padding-bottom: 2px;
+  /* Transición suave */
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-principal a:hover {
   border-bottom-color: var(--color-gold);
-  color: var(--color-ink);
+  color: var(--color-gold);
 }
 
 /* ---------- Hero ---------- */
@@ -202,6 +217,7 @@ a {
   margin-top: var(--space-3);
 }
 
+/* TRANSICIÓN CSS3: Botones de acción */
 .boton {
   display: inline-block;
   text-decoration: none;
@@ -211,6 +227,7 @@ a {
   font-weight: 600;
   border: 1px solid transparent;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .boton-primario {
@@ -220,6 +237,8 @@ a {
 
 .boton-primario:hover {
   background: var(--color-ink-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(16, 35, 61, 0.25);
 }
 
 .boton-secundario {
@@ -231,12 +250,14 @@ a {
 .boton-secundario:hover {
   background: var(--color-ink);
   color: var(--color-parchment);
+  transform: translateY(-2px);
 }
 
 .hero-ficha {
   background: var(--color-parchment);
   border-left: 5px solid var(--color-gold);
   padding: var(--space-3);
+  box-shadow: 0 4px 12px rgba(16, 35, 61, 0.08);
 }
 
 .hero-ficha dl {
@@ -264,9 +285,9 @@ a {
   font-weight: 700;
 }
 
-/* ---------- Servicios / trámites ---------- */
+/* ---------- Servicios / Trámites (Transición de Elevación) ---------- */
 
-.servicios, .programas, .agencias, .reclamos {
+.servicios, .programas, .agencias, .reclamos, .inscripcion-seccion {
   max-width: var(--ancho-maximo);
   margin: 0 auto;
   padding: var(--space-4) var(--space-2);
@@ -284,16 +305,21 @@ a {
   padding: 0;
 }
 
+/* TRANSICIÓN CSS3: Tarjetas con efecto hover */
 .tramite {
   display: flex;
   gap: var(--space-3);
   align-items: baseline;
-  padding: var(--space-2) 0;
+  padding: var(--space-2);
   border-bottom: 1px solid var(--color-line);
+  border-radius: var(--radio-sm);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tramite:hover {
   background: var(--color-parchment);
+  transform: translateX(6px);
+  box-shadow: -4px 0 0 0 var(--color-gold);
 }
 
 .tramite-icono {
@@ -320,7 +346,19 @@ a {
   font-size: 0.95rem;
 }
 
-/* ---------- Tabla de programas sociales ---------- */
+/* ---------- Tabla de Programas Sociales (Animación @keyframes) ---------- */
+
+/* ANIMACIÓN CSS3: Aparición progresiva */
+@keyframes fadeInTabla {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .tabla-envoltorio {
   overflow-x: auto;
@@ -331,6 +369,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   min-width: 640px;
+  animation: fadeInTabla 0.8s ease-in-out;
 }
 
 caption {
@@ -349,6 +388,10 @@ thead th {
   font-family: var(--font-display);
   font-weight: 700;
   border-bottom: 2px solid var(--color-ink);
+}
+
+tbody tr {
+  transition: background-color 0.2s ease;
 }
 
 tbody tr:hover {
@@ -370,7 +413,23 @@ td[data-estado="suspendido"] {
   font-weight: 600;
 }
 
-/* ---------- Red de agencias ---------- */
+/* ---------- Red de Agencias (Animación @keyframes) ---------- */
+
+/* ANIMACIÓN CSS3: Conteo / Despliegue de la sección */
+@keyframes aparecerSeccion {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.agencias {
+  animation: aparecerSeccion 0.9s ease-out forwards;
+}
 
 .lista-regiones {
   list-style: none;
@@ -384,6 +443,14 @@ td[data-estado="suspendido"] {
 .lista-regiones li {
   border-left: 3px solid var(--color-teal);
   padding: 0.4rem 0 0.4rem var(--space-2);
+  background: rgba(241, 234, 217, 0.4);
+  border-radius: 0 var(--radio-sm) var(--radio-sm) 0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.lista-regiones li:hover {
+  transform: translateY(-4px);
+  background: var(--color-parchment);
 }
 
 .lista-regiones h3 {
@@ -401,13 +468,17 @@ td[data-estado="suspendido"] {
   max-width: 70ch;
 }
 
-/* ---------- Formulario de reclamos ---------- */
+/* ---------- Formulario de Reclamos e Inscripción ---------- */
 
-.formulario-reclamo {
+.formulario-reclamo, .formulario-inscripcion {
   margin-top: var(--space-3);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  background: rgba(241, 234, 217, 0.2);
+  padding: var(--space-3);
+  border-radius: var(--radio-sm);
+  box-shadow: 0 4px 16px rgba(16, 35, 61, 0.05);
 }
 
 fieldset {
@@ -423,6 +494,7 @@ legend {
   font-family: var(--font-display);
   color: var(--color-ink);
   padding: 0 0.5rem;
+  font-weight: 700;
 }
 
 .campo {
@@ -448,6 +520,7 @@ input, select, textarea {
   border-radius: var(--radio-sm);
   background: var(--color-paper);
   color: var(--color-text);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 textarea {
@@ -488,8 +561,22 @@ input[type="checkbox"] {
   font-size: 0.9rem;
 }
 
-.formulario-reclamo .boton {
-  align-self: flex-start;
+/* ANIMACIÓN CSS3: Pop-up de Confirmación de Exito */
+@keyframes popExito {
+  0% { transform: scale(0.9); opacity: 0; }
+  50% { transform: scale(1.02); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.mensaje-exito {
+  animation: popExito 0.5s ease-out forwards;
+  background-color: #e6f4ea;
+  border-left: 5px solid var(--color-teal);
+  color: var(--color-teal);
+  padding: var(--space-2) var(--space-3);
+  margin-top: var(--space-2);
+  border-radius: var(--radio-sm);
+  font-weight: 600;
 }
 
 /* ---------- Pie de página ---------- */
@@ -523,6 +610,7 @@ input[type="checkbox"] {
   color: var(--color-parchment);
   opacity: 0.85;
   text-decoration: none;
+  transition: opacity 0.3s ease;
 }
 
 .footer-enlaces a:hover {
@@ -546,7 +634,7 @@ input[type="checkbox"] {
     grid-template-columns: 1fr;
   }
 
-  .site-header {
+  .header-contenedor {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -555,5 +643,8 @@ input[type="checkbox"] {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .agencias, table, .mensaje-exito {
+    animation: none;
   }
 }

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco Perú Solidario — Acceso de Usuarios</title>
+  <!-- Ruta ajustada a la carpeta css/ -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-contenedor">
+      <div class="marca">
+        <div class="marca-texto">
+          <span class="marca-nombre">Banco Perú Solidario</span>
+          <span class="marca-lema">Módulo de Autenticación</span>
+        </div>
+      </div>
+      <nav class="nav-principal">
+        <ul>
+          <li><a href="index.html">← Volver al Inicio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 600px; margin: 3rem auto; padding: 0 1rem;">
+    
+    <!-- Sección de Iniciar Sesión -->
+    <section class="formulario-reclamo">
+      <h2>Iniciar Sesión</h2>
+      
+      <div id="mensaje-login" style="display: none; padding: 12px; margin-bottom: 15px; border-radius: 4px;"></div>
+
+      <form id="form-login">
+        <div class="campo">
+          <label for="login-correo">Correo electrónico:</label>
+          <input type="email" id="login-correo" required placeholder="correo@ejemplo.com" autocomplete="email">
+        </div>
+        <div class="campo">
+          <label for="login-password">Contraseña:</label>
+          <input type="password" id="login-password" required placeholder="••••••••" autocomplete="current-password">
+        </div>
+        <button type="submit" id="btn-login" class="boton boton-primario">Ingresar</button>
+      </form>
+    </section>
+
+    <!-- Sección de Registro de Cuenta -->
+    <section class="formulario-reclamo" style="margin-top: 2rem;">
+      <h2>Crear Cuenta de Beneficiario</h2>
+
+      <div id="mensaje-registro" style="display: none; padding: 12px; margin-bottom: 15px; border-radius: 4px;"></div>
+
+      <form id="form-registro">
+        <div class="campo">
+          <label for="reg-nombre">Nombre completo:</label>
+          <input type="text" id="reg-nombre" required placeholder="Blas Alcántara" autocomplete="name">
+        </div>
+        <div class="campo">
+          <label for="reg-correo">Correo electrónico:</label>
+          <input type="email" id="reg-correo" required placeholder="correo@ejemplo.com" autocomplete="email">
+        </div>
+        <div class="campo">
+          <label for="reg-password">Contraseña:</label>
+          <input type="password" id="reg-password" required placeholder="••••••••" autocomplete="new-password">
+        </div>
+        <button type="submit" id="btn-registro" class="boton boton-secundario">Registrarse en Neon</button>
+      </form>
+    </section>
+
+  </main>
+
+  <script type="module">
+    import { registrarUsuario, iniciarSesion } from './js/auth.js';
+
+    const boxLogin = document.getElementById('mensaje-login');
+    const boxRegistro = document.getElementById('mensaje-registro');
+
+    // 1. Manejo del Registro de Usuarios
+    document.getElementById('form-registro').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('btn-registro');
+      
+      const nombre = document.getElementById('reg-nombre').value;
+      const correo = document.getElementById('reg-correo').value;
+      const contrasena = document.getElementById('reg-password').value;
+
+      try {
+        btn.disabled = true;
+        btn.textContent = 'Registrando...';
+
+        await registrarUsuario(nombre, correo, contrasena);
+
+        boxRegistro.style.display = 'block';
+        boxRegistro.style.backgroundColor = '#d4edda';
+        boxRegistro.style.color = '#155724';
+        boxRegistro.innerHTML = '<strong>¡Usuario guardado con éxito en Neon BD!</strong>';
+
+        document.getElementById('form-registro').reset();
+      } catch (err) {
+        boxRegistro.style.display = 'block';
+        boxRegistro.style.backgroundColor = '#f8d7da';
+        boxRegistro.style.color = '#721c24';
+        boxRegistro.innerHTML = '<strong>Error:</strong> ' + err.message;
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Registrarse en Neon';
+      }
+    });
+
+    // 2. Manejo del Inicio de Sesión
+    document.getElementById('form-login').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('btn-login');
+
+      const correo = document.getElementById('login-correo').value;
+      const contrasena = document.getElementById('login-password').value;
+
+      try {
+        btn.disabled = true;
+        btn.textContent = 'Verificando...';
+
+        const usuario = await iniciarSesion(correo, contrasena);
+
+        if (usuario) {
+          boxLogin.style.display = 'block';
+          boxLogin.style.backgroundColor = '#d4edda';
+          boxLogin.style.color = '#155724';
+          boxLogin.innerHTML = `<strong>¡Bienvenido(a) ${usuario.nombre}!</strong> Redirigiendo...`;
+
+          setTimeout(() => {
+            window.location.href = 'index.html';
+          }, 1200);
+        } else {
+          boxLogin.style.display = 'block';
+          boxLogin.style.backgroundColor = '#f8d7da';
+          boxLogin.style.color = '#721c24';
+          boxLogin.innerHTML = '<strong>Error:</strong> Correo o contraseña incorrectos.';
+        }
+      } catch (err) {
+        boxLogin.style.display = 'block';
+        boxLogin.style.backgroundColor = '#f8d7da';
+        boxLogin.style.color = '#721c24';
+        boxLogin.innerHTML = '<strong>Error:</strong> ' + err.message;
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Ingresar';
+      }
+    });
+  </script>
+</body>
+</html>
